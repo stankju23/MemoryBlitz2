@@ -15,7 +15,7 @@ import com.example.stanislavcavajda.memoryblitz.Helper.GameManager;
 import com.example.stanislavcavajda.memoryblitz.R;
 
 
-public class MainActivity extends AppCompatActivity{
+public class  MainActivity extends AppCompatActivity{
 
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
