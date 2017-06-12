@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    segmentedgroup:layout_constraintBottom_toBottomOf="parent"
+    segmentedgroup:layout_constraintTop_toTopOf="parent"
+    tools:context="com.example.stanislavcavajda.memoryblitz.Fragments.SettingsNew"
+    tools:layout_editor_absoluteX="8dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Cards to remember pre level"
+        android:textColor="#9A9A9A"
+        android:textSize="20dp" />
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        android:id="@+id/numberOfCards"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        segmentedgroup:sc_border_width="2dp"
+        segmentedgroup:sc_corner_radius="3dp">
+
+        <RadioButton
+            android:id="@+id/first"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/second"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/third"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="3" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Cards matrix"
+        android:textColor="#9A9A9A"
+        android:textSize="20dp" />
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        android:id="@+id/cardsMatrix"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        segmentedgroup:sc_border_width="2dp"
+        segmentedgroup:sc_corner_radius="3dp">
+
+        <RadioButton
+            android:id="@+id/twoxtwo"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2x2" />
+
+        <RadioButton
+            android:id="@+id/twoxthree"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2x3" />
+
+        <RadioButton
+            android:id="@+id/threexthree"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="3x3" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:text="Average time to remember"
+        android:textColor="#9A9A9A"
+        android:textSize="20dp" />
+
+    <NumberPicker
+        android:id="@+id/number_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contextClickable="false"
+        android:theme="@style/AppTheme.Picker"></NumberPicker>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#ff6829"
+        android:text="Save"
+        segmentedgroup:layout_constraintBottom_toBottomOf="parent"
+        segmentedgroup:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        segmentedgroup:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="8dp" />
+</LinearLayout>
+

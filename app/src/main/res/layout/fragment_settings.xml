@@ -1,0 +1,119 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.stanislavcavajda.memoryblitz.Fragments.SettingsFragment"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="576dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Cards to remember per level"
+            android:textColor="#000000"
+            android:layout_margin="20dp"
+            android:paddingTop="10dp"/>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/cards_number1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/settings_button"
+                android:text="1"/>
+
+            <Button
+                android:id="@+id/cards_number2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/settings_button"
+                android:text="2"/>
+
+            <Button
+                android:id="@+id/cards_number3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/settings_button"
+                android:text="3"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Cards matrix"
+            android:textColor="#000000"
+            android:layout_margin="20dp"
+            android:paddingTop="20dp"/>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/two_x_two_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/settings_button"
+                android:text="2x2"/>
+
+            <Button
+                android:id="@+id/two_x_three_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/settings_button"
+                android:text="2x3"/>
+
+            <Button
+                android:id="@+id/three_x_three_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/settings_button"
+                android:text="3x3"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Average time to remember"
+            android:textColor="#000000"
+            android:layout_margin="40dp"
+            android:paddingTop="30dp"/>
+        <NumberPicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Picker"
+            android:id="@+id/number_picker"
+            android:contextClickable="false">
+        </NumberPicker>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Save"
+            android:background="#ff6829"
+            android:id="@+id/save"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,77 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.stanislavcavajda.memoryblitz.Fragments.MainMenu">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp"
+        app:layout_constraintVertical_bias="0.346">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/logo"
+            android:id="@+id/menu_logo"/>
+
+        <ImageButton
+            android:id="@+id/play_game_btn"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/start_game_btn" />
+
+        <ImageButton
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_margin="6dp"
+            android:layout_gravity="center"
+            android:background="@drawable/graphic_pack_btn"
+            android:id="@+id/graphics_pack_btn"/>
+        <ImageButton
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_margin="6dp"
+            android:layout_gravity="center"
+            android:background="@drawable/settings_btn"
+            android:id="@+id/settings_btn"/>
+        <ImageButton
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_margin="6dp"
+            android:layout_gravity="center"
+            android:background="@drawable/highscore_btn"
+            android:id="@+id/highscore_btn"/>
+        <ImageButton
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_margin="6dp"
+            android:layout_gravity="center"
+            android:background="@drawable/about_btn"
+            android:id="@+id/about_btn"/>
+    </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

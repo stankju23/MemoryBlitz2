@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MemoryBlitz</string>
+
+    <string name="christmas_package"> <u>Christmas Package</u></string>
+    <string name="family_package"> <u>Family Package</u></string>
+    <string name="western_package"> <u>Western Package</u></string>
+    <string name="space_package"> <u>Space Package</u></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
