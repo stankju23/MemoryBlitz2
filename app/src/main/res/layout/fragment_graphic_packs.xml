@@ -36,8 +36,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="10dp"
-                android:background="@drawable/christmas_5"
-                android:src="@drawable/hidecard"
+                android:src="@drawable/christmas_5"
                 />
 
             <TextView
@@ -65,8 +64,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/opa"
-                android:src="@drawable/hidecard"
+                android:src="@drawable/family_8"
                 />
 
             <TextView
@@ -94,8 +92,7 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/western_1"
-                android:src="@drawable/hidecard"
+                android:src="@drawable/western_1"
                 />
 
             <TextView
@@ -123,8 +120,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/space_1"
-                android:src="@drawable/hidecard"
+                android:src="@drawable/space_1"
                 />
 
             <TextView

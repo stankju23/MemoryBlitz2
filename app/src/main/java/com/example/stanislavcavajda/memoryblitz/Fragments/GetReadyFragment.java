@@ -1,6 +1,8 @@
 package com.example.stanislavcavajda.memoryblitz.Fragments;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -20,6 +22,8 @@ public class GetReadyFragment extends Fragment {
 
     private TextView getReadyText;
     private TextView secondsText;
+
+
     public GetReadyFragment() {
         // Required empty public constructor
     }
@@ -48,13 +52,23 @@ public class GetReadyFragment extends Fragment {
         new CountDownTimer(5000,1000){
             @Override
             public void onTick(long millisUntilFinished) {
+                secondsText.animate().translationY(15f).setDuration(500);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        secondsText.animate().translationY(-15f).setDuration(500);
+                    }
+                },500);
+
                 secondsText.setText(String.valueOf(millisUntilFinished / 1000));
             }
 
             @Override
             public void onFinish() {
-                Intent intent = new Intent(getContext(), MainGame.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(),MainGame.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.abc_slide_in_bottom,R.anim.abc_slide_out_bottom);
             }
         }.start();
 

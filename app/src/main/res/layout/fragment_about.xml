@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.stanislavcavajda.memoryblitz.Fragments.AboutFragment"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/back_btn"
+            android:layout_margin="15dp"
+            android:id="@+id/back_btn"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.7"
+            android:src="@drawable/about" />
+
+
+        <RelativeLayout
+            android:id="@+id/author_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/author"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:background="#ff6829"
+                android:padding="5dp"
+                android:text="Author"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/about_me"
+                android:layout_alignTop="@+id/author"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

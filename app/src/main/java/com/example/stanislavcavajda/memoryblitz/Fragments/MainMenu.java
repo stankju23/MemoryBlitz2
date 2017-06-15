@@ -24,6 +24,8 @@ public class MainMenu extends Fragment {
     private ImageButton graphicPacksBtn;
     private ImageButton settingsBtn;
     private ImageButton startGameBtn;
+    private ImageButton highScoreBtn;
+    private ImageButton aboutBtn;
 
     public MainMenu() {
         // Required empty public constructor
@@ -76,13 +78,44 @@ public class MainMenu extends Fragment {
             public void onClick(View v) {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left,R.anim.enter_from_left,R.anim.exit_to_right);
+                //ft.setCustomAnimations(R.anim.slide_in_up,R.anim.slide_out_up,R.anim.slide_out_up,R.anim.slide_in_up);
+                ft.setCustomAnimations(android.R.anim.fade_in,
+                        android.R.anim.fade_out);
                 GetReadyFragment settings = new GetReadyFragment();
                 ft.replace(R.id.fragment_container,settings);
                 ft.addToBackStack("");
                 ft.commit();
             }
         });
+
+        highScoreBtn = (ImageButton)view.findViewById(R.id.highscore_btn);
+        highScoreBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left,R.anim.enter_from_left,R.anim.exit_to_right);
+                HighScoreFragment settings = new HighScoreFragment();
+                ft.replace(R.id.fragment_container,settings);
+                ft.addToBackStack("");
+                ft.commit();
+            }
+        });
+
+        aboutBtn = (ImageButton) view.findViewById(R.id.about_btn);
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_to_right,R.anim.enter_from_right,R.anim.exit_to_left);
+                AboutFragment settings = new AboutFragment();
+                ft.replace(R.id.fragment_container,settings);
+                ft.addToBackStack("");
+                ft.commit();
+            }
+        });
+
 
         return view;
     }
