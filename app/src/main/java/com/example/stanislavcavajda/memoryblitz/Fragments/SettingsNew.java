@@ -4,14 +4,23 @@ package com.example.stanislavcavajda.memoryblitz.Fragments;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -32,6 +41,8 @@ public class SettingsNew extends Fragment {
     private SegmentedGroup cardsMatrix;
     private NumberPicker numberPicker;
     private Button saveBtn;
+    private SoundPool mp;
+    private LinearLayout mainLayout;
 
     public SettingsNew() {
         // Required empty public constructor
@@ -54,6 +65,12 @@ public class SettingsNew extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings_new, container, false);
 
+        mainLayout = (LinearLayout) view.findViewById(R.id.main_layout);
+        if (GameManager.getInstance().getDark()){
+            mainLayout.setBackgroundColor(Color.parseColor("#000B2C"));
+        } else {
+            mainLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
         Log.i("Number of cards index",GameManager.getInstance().getNumbersOfCardsIndex() + "");
         Log.i("Cards matrix",GameManager.getInstance().getMatrixIndex() + "");
         // numbers of cards initialization
@@ -101,7 +118,7 @@ public class SettingsNew extends Fragment {
         });
 
         numberPicker = (NumberPicker) view.findViewById(R.id.number_picker);
-        numberPicker.setMinValue(2);
+        numberPicker.setMinValue(1);
         numberPicker.setMaxValue(17);
         numberPicker.setValue(GameManager.getInstance().getSecondsToRemember());
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
@@ -112,20 +129,45 @@ public class SettingsNew extends Fragment {
         });
 
         saveBtn = (Button) view.findViewById(R.id.save);
-        saveBtn.setOnClickListener(new View.OnClickListener() {
+        saveBtn.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt("numberOfCardsIndex",GameManager.getInstance().getNumbersOfCardsIndex());
-                editor.putInt("cardsMatrixIndex",GameManager.getInstance().getMatrixIndex());
-                editor.putInt("secondsToRemember",GameManager.getInstance().getSecondsToRemember());
-                editor.commit();
-                getFragmentManager().popBackStack();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN : {
+                        Button view = (Button ) v;
+                        view.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+                        v.invalidate();
+                        break;
+                    }
+                    case MotionEvent.ACTION_UP: {
+                        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putInt("numberOfCardsIndex",GameManager.getInstance().getNumbersOfCardsIndex());
+                        editor.putInt("cardsMatrixIndex",GameManager.getInstance().getMatrixIndex());
+                        editor.putInt("secondsToRemember",GameManager.getInstance().getSecondsToRemember());
+                        editor.commit();
+                        getFragmentManager().popBackStack();
+                    }
+                    case MotionEvent.ACTION_CANCEL: {
+                        Button view = (Button) v;
+                        view.getBackground().clearColorFilter();
+                        view.invalidate();
+                        playSound();
+                        break;
+                    }
 
+                }
+                return true;
             }
+
         });
         return view;
+    }
+
+    void playSound() {
+        MediaPlayer mp ;
+        mp = MediaPlayer.create(getActivity().getApplicationContext(),R.raw.tap1);
+        mp.start();
     }
 
 }

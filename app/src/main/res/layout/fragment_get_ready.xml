@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.stanislavcavajda.memoryblitz.Fragments.GetReadyFragment"
-    android:background="#FFF600">
+    android:background="#FFF600"
+    android:id="@+id/get_ready_layout">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/circle"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:textSize="40dp"/>
@@ -35,7 +36,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:id="@+id/imageView" />
+        android:id="@+id/circle" />
 
     <TextView
         android:layout_width="wrap_content"

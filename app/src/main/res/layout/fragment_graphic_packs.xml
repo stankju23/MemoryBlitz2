@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.stanislavcavajda.memoryblitz.Fragments.Graphic_packs"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:id="@+id/graphic_packs_layout">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,5 +1,7 @@
 package com.example.stanislavcavajda.memoryblitz.Helper;
 
+import android.media.MediaPlayer;
+
 /**
  * Created by stanislavcavajda on 10.6.17.
  */
@@ -26,6 +28,7 @@ public class GameManager {
     private boolean winner;
     private int actualScore;
 
+    private boolean dark = false;
 
     // constructor
     private GameManager() {
@@ -109,4 +112,17 @@ public class GameManager {
         this.threexthreeHighScore = threexthreeHighScore;
     }
 
+
+    public boolean getDark(){
+        return dark;
+    }
+
+    public void setDark(){
+        if (!dark) {
+            dark = true;
+        } else {
+            dark = false;
+        }
+
+    }
 }

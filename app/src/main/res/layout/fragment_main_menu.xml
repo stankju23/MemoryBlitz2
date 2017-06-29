@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.stanislavcavajda.memoryblitz.Fragments.MainMenu"
-    android:background="@drawable/main_menu_bg">
+    android:background="@drawable/main_menu_bg"
+    android:id="@+id/background">
 
 
         <LinearLayout
@@ -84,5 +85,12 @@
                 android:background="@drawable/about_btn"
                 android:layout_weight="1.1"/>
         </LinearLayout>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/day_night"
+        android:layout_gravity="bottom|right"
+        android:id="@+id/dark_mode"/>
 
 </FrameLayout>
